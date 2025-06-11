@@ -1,0 +1,86 @@
+<title>Login or Register</title>
+
+<body>
+<h1>Login or Register</h1>
+<div class="container">
+  <div class="tab-buttons">
+    <button 
+      [ngClass]="activeForm === 'login' ? 'active' : ''" 
+      (click)="switchForm('login')">Login</button>
+
+    <button 
+      [ngClass]="activeForm === 'register' ? 'active' : ''" 
+      (click)="switchForm('register')">Register</button>
+  </div>
+
+  <!-- Login Form -->
+<form id="loginForm" [class.active]="activeForm === 'login'" (ngSubmit)="onLogin()" #loginFormRef="ngForm">
+  <input 
+    type="text" 
+    name="username" 
+    placeholder="Username" 
+    required 
+    [(ngModel)]="loginobj.username" 
+    #loginUsernameRef="ngModel"
+    [ngClass]="{ 'error': loginUsernameRef.invalid && loginUsernameRef.touched }"
+  />
+
+  <input 
+    type="password" 
+    name="password" 
+    placeholder="Password" 
+    required 
+    [(ngModel)]="loginobj.password" 
+    #loginPasswordRef="ngModel"
+    [ngClass]="{ 'error': loginPasswordRef.invalid && loginPasswordRef.touched }"
+  />
+
+  <input 
+    type="text" 
+    name="role" 
+    placeholder="Role" 
+    required 
+    [(ngModel)]="loginobj.role" 
+    #loginroleRef="ngModel"
+    [ngClass]="{ 'error': loginroleRef.invalid && loginroleRef.touched }"
+  />
+
+  <button type="submit" class="submit-btn" [disabled]="loginFormRef.invalid">Login</button>
+</form>
+
+<!-- Register Form -->
+<form id="registerForm" [class.active]="activeForm === 'register'" (ngSubmit)="onRegister()" #registerFormRef="ngForm">
+  <input 
+    type="text" 
+    name="username" 
+    placeholder="Username" 
+    required 
+    [(ngModel)]="registerobj.username" 
+    #registerusernameRef="ngModel"
+    [ngClass]="{ 'error': registerusernameRef.invalid && registerusernameRef.touched }"
+  />
+
+  <input 
+    type="password" 
+    name="password" 
+    placeholder="Password" 
+    required 
+    [(ngModel)]="registerobj.password" 
+    #registerPasswordRef="ngModel"
+    [ngClass]="{ 'error': registerPasswordRef.invalid && registerPasswordRef.touched }"
+  />
+
+  <input 
+    type="text" 
+    name="role" 
+    placeholder="Role" 
+    required 
+    [(ngModel)]="registerobj.role" 
+    #registerroleRef="ngModel"
+    [ngClass]="{ 'error': registerroleRef.invalid && registerroleRef.touched }"
+  />
+
+  <button type="submit" class="submit-btn" [disabled]="registerFormRef.invalid">Register</button>
+</form>
+</div>
+</body>

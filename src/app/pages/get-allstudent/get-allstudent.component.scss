@@ -1,0 +1,48 @@
+.table-container {
+  margin: 20px auto;
+  max-width: 100%;
+  padding: 20px;
+  background-color: #e9f8fa; /* light variant of navbar */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.student-table th, .student-table td {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.student-table th {
+  background-color: #e9f8fa; /* same as navbar */
+  color: black;
+}
+
+.student-table tr:nth-child(even) {
+  background-color: #f2fdfd; /* lighter match to layout */
+}
+
+.student-table tr:hover {
+  background-color: #dff7f9; /* hover highlight */
+}
+
+button {
+  padding: 10px 18px;
+  font-size: 14px;
+background: linear-gradient(to right, #00d5ff, #2bbafb);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+   background: linear-gradient(to right, #2bbafb, #00d5ff);
+}

@@ -1,0 +1,97 @@
+<body>
+  <div class="container">
+    <h4 class="form-title">Update Student</h4>
+
+    <form [formGroup]="updateStudentForm" novalidate (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="studentName">Name</label>
+        <input
+          type="text"
+          id="studentName"
+          formControlName="studentName"
+          placeholder="Enter full name"
+          [class.error]="updateStudentForm.get('studentName')?.invalid && updateStudentForm.get('studentName')?.touched"
+        />
+        <div *ngIf="updateStudentForm.get('studentName')?.invalid && updateStudentForm.get('studentName')?.touched" class="error-text">
+          Name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNo">Phone Number</label>
+        <input
+          type="text"
+          id="phoneNo"
+          maxlength="10"
+          formControlName="phoneNo"
+          placeholder="Enter phone number"
+          [class.error]="updateStudentForm.get('phoneNo')?.invalid && updateStudentForm.get('phoneNo')?.touched"
+        />
+        <div *ngIf="updateStudentForm.get('phoneNo')?.invalid && updateStudentForm.get('phoneNo')?.touched" class="error-text">
+          Phone number is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nativePlace">Native Place</label>
+        <input
+          type="text"
+          id="nativePlace"
+          formControlName="nativePlace"
+          placeholder="City or Town"
+          [class.error]="updateStudentForm.get('nativePlace')?.invalid && updateStudentForm.get('nativePlace')?.touched"
+        />
+        <div *ngIf="updateStudentForm.get('nativePlace')?.invalid && updateStudentForm.get('nativePlace')?.touched" class="error-text">
+          Native place is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="example@email.com"
+          [class.error]="updateStudentForm.get('email')?.invalid && updateStudentForm.get('email')?.touched"
+        />
+        <div *ngIf="updateStudentForm.get('email')?.invalid && updateStudentForm.get('email')?.touched" class="error-text">
+          Enter a valid email.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input
+          type="date"
+          id="dob"
+          formControlName="dob"
+          [class.error]="updateStudentForm.get('dob')?.invalid && updateStudentForm.get('dob')?.touched"
+        />
+        <div *ngIf="updateStudentForm.get('dob')?.invalid && updateStudentForm.get('dob')?.touched" class="error-text">
+          Date of birth is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="department">Department</label>
+        <input
+          type="text"
+          id="department"
+          formControlName="department"
+          placeholder="e.g. CSE, ECE"
+          [class.error]="updateStudentForm.get('department')?.invalid && updateStudentForm.get('department')?.touched"
+        />
+        <div *ngIf="updateStudentForm.get('department')?.invalid && updateStudentForm.get('department')?.touched" class="error-text">
+          Department is required.
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button type="submit" class="submit-btn" [disabled]="updateStudentForm.invalid">
+          Update
+        </button>
+      </div>
+    </form>
+  </div>
+</body>

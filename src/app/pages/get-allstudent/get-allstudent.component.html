@@ -1,0 +1,40 @@
+<div class="table-container">
+     
+
+  <table class="student-table" >
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>DOB</th>
+        <th>Native Place</th>
+        <th>Department</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.id }}</td>
+        <td>{{ student.studentName }}</td>
+        <td>{{ student.phoneNo }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.dob }}</td>
+        <td>{{ student.nativePlace }}</td>
+        <td>{{ student.department }}</td>
+        <td>
+          <button [routerLink]="['/students', student.id]" style="background-color: rgb(55, 116, 223); color: white;">Update</button>
+        </td>
+        <td>
+           <button (click)="deleteStudent(student.id)" style="background-color: rgb(205, 76, 50); color: white;">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <p>No students found.</p>
+  </ng-template>
+</div>
