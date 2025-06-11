@@ -1,3 +1,5 @@
 export const environment = {
-    url:process.env['NG_APP_API_URL']
+  production: false,
+  authApiUrl: 'http://localhost:9000/api/auth',
+  studentApiUrl: 'http://localhost:9000/api/student'
 };

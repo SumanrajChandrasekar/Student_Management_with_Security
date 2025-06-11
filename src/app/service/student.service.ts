@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class StudentService {
 
-  private baseUrl = 'http://localhost:9000/api/students';
+  private baseUrl = environment.studentApiUrl; // Use the studentApiUrl from environment
 
   constructor(private http: HttpClient) {}
 
