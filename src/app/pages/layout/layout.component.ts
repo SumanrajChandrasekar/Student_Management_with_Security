@@ -17,17 +17,17 @@ export class LayoutComponent implements OnInit {
   currentRoute: string = '';
 
   ngOnInit(): void {
-    // this.username = 'Guest';
-    // this.role = 'Viewer';
-    const userJson = localStorage.getItem('loggedInUser');
-    if (userJson) {
-      const user = JSON.parse(userJson);
-      this.username = user.username;
-      this.role = user.role;
-      console.log('User:', user.username, 'Role:', user.role);
-    } else {
-      this.router.navigateByUrl('/login');
-    }
+    this.username = 'Guest';
+    this.role = 'Viewer';
+    // const userJson = localStorage.getItem('loggedInUser');
+    // if (userJson) {
+    //   const user = JSON.parse(userJson);
+    //   this.username = user.username;
+    //   this.role = user.role;
+    //   console.log('User:', user.username, 'Role:', user.role);
+    // } else {
+    //   this.router.navigateByUrl('/login');
+    // }
     
     // Subscribe to route changes
     this.currentRoute = this.router.url;
