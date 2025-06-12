@@ -8,9 +8,9 @@ import com.example.demo.entity.User;
 import com.example.demo.payload.LoginResponse;
 import com.example.demo.service.UserService;
 
+@CrossOrigin(origins = "https://demoprojectsuman.netlify.app")
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
 
     @Autowired
