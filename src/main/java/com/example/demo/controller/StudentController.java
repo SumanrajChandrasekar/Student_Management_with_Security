@@ -21,7 +21,7 @@ import com.example.demo.service.StudentService;
 
 @RestController
 @RequestMapping("/api/students")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://demoprojectsuman.netlify.app")
 @Validated
 public class StudentController {
 
